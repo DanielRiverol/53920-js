@@ -14,4 +14,5 @@
  - [Clase 6](https://github.com/DanielRiverol/53920-js/tree/main/clase_6)
  - [After-class 2](https://github.com/DanielRiverol/53920-js/tree/main/after_arrays)
  - [Clase 7](https://github.com/DanielRiverol/53920-js/tree/main/clase_7)
+ - [Clase 8](https://github.com/DanielRiverol/53920-js/tree/main/clase_8)
  
