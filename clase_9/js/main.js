@@ -36,4 +36,74 @@ const personas = [
   "Sofía",
   "Oliver",
   "Amelia",
+  "Pedrito",
 ];
+
+//console.dir(document.body)
+//Acceso a los nodos por id
+const titulo = document.getElementById("titulo");
+titulo.innerHTML = "<span>Clase 9</span>";
+//console.log(titulo)
+//Acceso al nodo por clase
+//const paises = document.getElementsByClassName('pais')
+const paises = document.getElementsByTagName("li");
+
+//console.log(paises[0].innerHTML="<em>ARGENTINA</em>");
+for (const elemento of paises) {
+  //console.log(elemento.innerHTML);
+}
+//Agregar estilos
+//paises[0].className="pais box"
+//titulo.style.backgroundColor="red"
+//Crear elementos
+const parrafo = document.createElement("p");
+
+parrafo.innerText = "Soy un parrafo creado desde JS";
+//Agregar al body
+//document.body.append(parrafo)
+const contenedor = document.getElementById("contenedor");
+contenedor.append(parrafo);
+
+const listaNombres = document.getElementById("nombres");
+for (const nombre of personas) {
+  const li = document.createElement("li");
+  li.innerText = nombre;
+  listaNombres.append(li);
+}
+//Remover elementos
+//titulo.remove()
+titulo.style.display = "block";
+//Template literals
+
+const producto = {
+  nombre: "Papas",
+  precio: 230,
+};
+
+let concatenado =
+  "Producto: " + producto.nombre + ", precio: $" + producto.precio;
+contenedor.innerText = concatenado;
+console.log(concatenado);
+let template = `Producto: 
+${producto.nombre}, precio:
+u$s ${producto.precio}`;
+console.log(template);
+contenedor.innerText = template;
+ 
+const cardProducto = `<div class="card">
+                        <h3>Producto: ${producto.nombre}</h3>
+                        <p>Precio: u$s ${producto.precio}</p>
+                      </div>`;
+
+contenedor.innerHTML = `<div class="card">
+                        <h3>Producto: ${producto.nombre}</h3>
+                        <p>Precio: u$s ${producto.precio}</p>
+                      </div>`;
+
+for (const producto of productos) {
+  const cardProducto = `<div class="card">
+                        <h3>Producto: ${producto.nombre}</h3>
+                        <p>Precio: u$s ${producto.precio}</p>
+                      </div>`;
+  contenedor.innerHTML = contenedor.innerHTML + cardProducto;
+}
