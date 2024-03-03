@@ -41,7 +41,7 @@ function filtrarServicio(arr, filtro) {
 // Función para crear estructura html
 function crearHtml(arr) {
   contenedor.innerHTML = "";
-  //validar que pasa cuando no recibo recibo ningun
+  //validar qué pasa cuando no recibo ningun array
   let html;
   for (const el of arr) {
     html = `<div class="card">
