@@ -3,6 +3,8 @@
 # Comisión 53920 JS
 
 ## Repositorio de clases y ejercicios 
+*Este Repositorio permanecerá activo **30 días** luego de finalizado el curso. Terminado ese tiempo el mismo será elimimado.*
+
 ## Índice de clases
 
  - [Clase 1](https://github.com/DanielRiverol/53920-js/tree/main/clase_1)
