@@ -1,7 +1,7 @@
 const btnSearch = document.querySelector("#btnSearch"),
   inputIngreso = document.querySelector("#ingreso"),
   contenedor = document.querySelector("#contenedor");
-const inputUser = document.querySelector("#user");
+
 const servicios = [
   { id: 1, nombre: "limpieza de cutis", precio: 1200, img: "limpieza.jpg" },
   { id: 2, nombre: "masajes", precio: 1800, img: "masajes.jpg" },
@@ -57,3 +57,80 @@ function crearHtml(arr) {
     contenedor.innerHTML = contenedor.innerHTML + html;
   }
 }
+//crearHtml(servicios)
+
+// btnSearch.addEventListener("click", () => {
+//   const filtrados = filtrarServicio(servicios, inputIngreso.value);
+//   console.log(filtrados);
+//   crearHtml(filtrados);
+// });
+
+//localStorage
+localStorage.setItem("saludo", "Soy un mensaje almacenado en LS");
+localStorage.setItem("darkMode", true);
+localStorage.setItem("edad", 42);
+localStorage.setItem('conjunto', [1,2,3,4,5,6,7,8,9])
+//recuperar info
+const saludo = localStorage.getItem("saludo");
+console.log(typeof saludo);
+const modoOscuro = localStorage.getItem("darkMode") == "true";
+console.log( modoOscuro);
+const edad = parseInt(localStorage.getItem("edad"));
+console.log(edad);
+const conjunto= localStorage.getItem('conjunto').split(',')
+console.log(conjunto);
+//localStorage.setItem('carrito',[])
+//remover items
+localStorage.removeItem('saludo')
+localStorage.removeItem('conjunto')
+
+localStorage.clear();
+
+const usuario = { nombre: "Dani", edad: 41 };
+
+const usuarioEnJson= JSON.stringify(usuario)
+localStorage.setItem('obj',usuarioEnJson)
+
+const recuperoUsuario = JSON.parse(localStorage.getItem("obj"));
+console.log(recuperoUsuario);
+//guardar carrito en el LS
+
+const carrito=[]
+let carritoLS = JSON.parse(localStorage.getItem("carrito"));
+localStorage.setItem('carrito',JSON.stringify(carrito))
+btnSearch.addEventListener('click', ()=>{
+  const encontrado= buscarServicio(servicios, inputIngreso.value)
+  console.log(encontrado);
+  carrito.push(encontrado)
+  localStorage.setItem('carrito',JSON.stringify(carrito))
+  console.log(carrito);
+  carritoLS= JSON.parse(localStorage.getItem('carrito'))
+  console.log(carritoLS);
+})
+const btnMostrar= document.querySelector("button.btn-success"),
+ btnEliminar= document.querySelector("button.btn-delete")
+
+ btnMostrar.addEventListener('click', ()=>{
+  crearHtml(carritoLS)
+ })
+
+ btnEliminar.addEventListener("click", ()=>{
+  localStorage.removeItem('carrito')
+  //donde debe ir este mensaje?
+  contenedor.innerHTML="No tienes productos en el carrito";
+ })
+
+ //Crear una funcion que guarde la prefencia del usuario si desea recordar o no susu datos
+ const inputUser = document.querySelector("#user"),
+   inputPass = document.querySelector("#pass"),
+   checkbox = document.querySelector("#check"),
+   form = document.querySelector('form');
+
+   function guardarEnLS(storage){
+    //funcionalidad
+   }
+
+   form.addEventListener('submit',(e)=>{
+        e.preventDefault()
+        guardarEnLS('')
+   })
