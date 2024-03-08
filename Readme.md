@@ -21,4 +21,6 @@
  - [Clase 10](https://github.com/DanielRiverol/53920-js/tree/main/clase_10)
  - [After-class 3](https://github.com/DanielRiverol/53920-js/tree/main/after_dom)
  - [Clase 11](https://github.com/DanielRiverol/53920-js/tree/main/clase_11)
+ - [Clase 12](https://github.com/DanielRiverol/53920-js/tree/main/clase_12)
+ - [Clase 13](https://github.com/DanielRiverol/53920-js/tree/main/clase_13)
  
