@@ -143,3 +143,26 @@ img {
 .card-action {
   max-width: 100%;
 }
+
+.card-id {
+  display: flex;
+  flex-direction: row;
+  width: 480px;
+  height: auto;
+}
+.card-id_description {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 5px;
+}
+.card-id_description h3{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.card-id_description p{
+  font-size: 1.1rem;
+}

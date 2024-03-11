@@ -59,7 +59,7 @@ function crearHtml(arr) {
     contenedor.innerHTML += html;
   }
 }
-crearHtml(servicios);
+//crearHtml(servicios);
 //Crear una funcion que guarde la preferencia del usuario si desea recordar o no susudatos
 const inputUser = document.querySelector("#user"),
   inputPass = document.querySelector("#pass"),
@@ -158,12 +158,104 @@ const persona2 = {
 //Destructuring
 // let nombre= persona1.nombre
 // let edad= persona1.edad
+const persona3 = {
+  id_persona: 1,
+  nombre: "Lisa",
+  apellido: "Simpson",
+  edad: 8,
+  padre: { id_persona: 2, nombre_padre: "Homero" },
+};
+const { nombre, apellido, edad, id_persona: id } = persona3;
+//const nombre= persona3.nombre
+// console.log(persona3.id_persona);
+// console.log(nombre);
+// console.log(edad);
 
-const { nombre, apellido, activo, edad } = persona1;
-const { nombre: nombre_pers, id_persona: id } = persona2; //alias
+// console.log(id);
 
-console.log(nombre);
-console.log(apellido);
-console.log(edad);
-console.log(nombre_pers);
-console.log(id);
+// function desestructurar(obj){
+//   const {nombre, edad}=obj
+//   console.log(`Nombre: ${nombre}, edad: ${edad}`);
+// }
+// function desestructurar({nombre, edad}){
+
+//   console.log(`Nombre: ${nombre}, edad: ${edad}`);
+// }
+// desestructurar(persona3)
+
+// function crearTarjeta(obj){
+//   const {nombre, edad, apellido}=obj
+//   return `<div class="card">
+//       <h3>${nombre}</h3>
+//       <h3>${apellido}</h3>
+//       <p>${edad}</p>
+//     </div>`;
+// }
+//v2
+function crearTarjeta({ nombre, edad, apellido }) {
+  return `<div class="card">
+      <h3>${nombre}</h3>
+      <h3>${apellido}</h3>
+      <p>${edad}</p>
+    </div>`;
+}
+
+//contenedor.innerHTML = crearTarjeta(persona3);
+// //destructuring de array
+const nums = [1, 4, 6, 2, 8, 7, 1, 2];
+const nombres = ["Juan", "Luis", "Rebeca", "Maria"];
+const nombres2 = ["Nico", "Anna", "Dani", "Luca"];
+// console.log(nums);
+// //console.log(nums[0]);
+// const [, a, , b, , c] = nums;
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+//spread ...
+// console.log(nombres);
+// console.log(...nombres);
+// console.log(nums);
+// console.log(...nums);
+
+// console.log(Math.max(...nums));
+// console.log(Math.min(...nums));
+// const arrayConConcat = nombres.concat(nombres2);
+// console.log(arrayConConcat);
+// const nuevoArrayNombres= [...nombres,...nombres2]
+// console.log(nuevoArrayNombres);
+
+//rest
+function calcularTotal(...numeros) {
+  return numeros.reduce((acc, num) => (acc += num), 0);
+}
+console.log(calcularTotal(1, 3, 5, 2, 7));
+console.log(calcularTotal(1, 2, 7));
+console.log(calcularTotal(7));
+
+const persona5 = {
+  nombre: "Juanito",
+  apellido: "Arcoiris",
+  edad: 10,
+};
+console.log(persona5);
+const copiaPersona5 = {
+  ...persona5,
+  edad: 15,
+  imagen:"juanito.png", 
+  cancion:"Soy mejor que tú"
+};
+console.log(copiaPersona5);
+const crearTarjetaID = (obj) => {
+  const { imagen, nombre, apellido, edad, cancion } = obj;
+  return `<div class="card card-id">
+      <img src="./img/${imagen}" alt="Juanito arcoiris">
+      <section class="card-id_description">
+        <h3>${nombre} ${apellido}</h3>
+        <p>Edad: ${edad}</p>
+        <p>Canción: ${cancion}</p>
+      </section>
+    </div>`;
+};
+contenedor.innerHTML = crearTarjetaID(copiaPersona5);
